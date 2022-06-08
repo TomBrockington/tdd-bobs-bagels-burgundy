@@ -27,6 +27,7 @@ class Basket {
                     price: fullMenu[items]
                 }
                 this.basket.push(insideBasket)
+                return true
             }
             
         }
