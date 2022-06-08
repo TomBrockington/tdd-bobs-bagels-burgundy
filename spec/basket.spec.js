@@ -20,8 +20,8 @@ describe("Basket", () => {
     it("Add items to basket", () => {
         const expected = [
             { item: "bagel", quantity: 1, price: 2.99 },
-            { item: "brownie", quantity: 3, price: 3.99 }]
-
+            { item: "brownie", quantity: 3, price: 3.99 }
+        ]
         basket.addItem("bagel", 1)
         basket.addItem("brownie", 3)
         let bagelInBasket = basket.getBasket()
@@ -101,5 +101,12 @@ describe("Basket", () => {
         basket.addItem("brownie", 3)
         let total = basket.basketTotal()
         expect(total).toEqual(expected)
+    })
+
+    //Test 10
+    it("Throw error if negative quanitity", () => {
+        const expected = "Cant add negative numbers"
+        let bagelInBasket = basket.addItem("bagel", -1)
+        expect(bagelInBasket).toEqual(expected)
     })
 })
