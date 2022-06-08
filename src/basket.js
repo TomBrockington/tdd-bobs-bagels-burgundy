@@ -27,8 +27,8 @@ class Basket {
                     price: fullMenu[items]
                 }
                 this.basket.push(insideBasket)
+                return true 
             }
-            
         }
         return "Cant add negative numbers"
     }
@@ -66,6 +66,16 @@ class Basket {
         }
         const totalPrice = eachItem.reduce((total, quantity) => { return total + quantity }, 0)
         return ("£" + totalPrice)
+    }
+
+    variantTotal(variant) {
+        let itemTotal = 0
+        for (let i = 0; i < this.basket.length; i++) {
+            if (this.basket[i].item === variant) {
+                itemTotal++
+            }
+        }
+        return itemTotal
     }
 }
 
