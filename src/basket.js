@@ -33,7 +33,7 @@ class Basket {
                 const insideBasket = {
                     item: itemName,
                     quantity: itemQuantity,
-                    price: this.menu.itemName
+                    price: this.menu[itemName]
                 }
                 this.basket.push(insideBasket)
                 return true
@@ -62,10 +62,8 @@ class Basket {
     }
 
     priceChecker(itemName) {
-        const fullMenu = MENU.GetMenu()
-        for (const items in fullMenu)
-            if (itemName === items) // dont need brackets
-                return fullMenu[items] 
+       
+        return this.menu[itemName]
             
     }
 
