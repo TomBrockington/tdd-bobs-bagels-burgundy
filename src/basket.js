@@ -1,4 +1,4 @@
-const MENU = require("./menu.js")
+
 
 // these become variable 'capacity'
 const smallBasket = 5;
@@ -11,6 +11,13 @@ class Basket {
     constructor(capacity = smallBasket) {
         this.basket = []
         this.basketSize = capacity
+        this.menu ={
+            bagel: 2.99,
+            brownie: 3.99,
+            chocolateBagel: 4.99 
+        }
+
+
     }
 
     getBasket() {
@@ -18,19 +25,21 @@ class Basket {
     } 
 
     addItem(itemName, itemQuantity) {
-        const fullMenu = MENU.GetMenu()
-        for (const items in fullMenu) {
-            if (items === itemName && itemQuantity > 0) {
+        if (!(itemName in this.menu)){
+            return 'not in menu'
+        }
+        
+           else if (itemQuantity > 0) {
                 const insideBasket = {
                     item: itemName,
                     quantity: itemQuantity,
-                    price: fullMenu[items]
+                    price: this.menu.itemName
                 }
                 this.basket.push(insideBasket)
                 return true
                 
             }
-        }
+        
         return "Cant add negative numbers"
     }
 
