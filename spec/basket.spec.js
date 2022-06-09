@@ -109,7 +109,11 @@ describe("Basket", () => {
     })
 
     //Test 11
-    //it('item not in menu',() =>{
+    it('item not in menu',() =>{
+        const result=basket.addItem('pizza',1)
+        const expected ='not in menu'
 
-    //})
+        expect(result).toEqual(expected)
+
+    })
 })
