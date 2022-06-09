@@ -81,14 +81,12 @@ describe("Basket", () => {
 
     //Test 8
     it("favourite bagel quantity", () => {
-        const expected = [{ item: "chocolateBagel", quantity: 1, price: 4.99 },
-        { item: "chocolateBagel", quantity: 1, price: 4.99 },
-        { item: "chocolateBagel", quantity: 1, price: 4.99 }]
-
+        const expected = 3
         basket.addItem("chocolateBagel", 1)
         basket.addItem("chocolateBagel", 1)
+        basket.addItem("brownie", 1)
         basket.addItem("chocolateBagel", 1)
-        let alert = basket.getBasket()
+        let alert = basket.variantTotal("chocolateBagel")
         expect(alert).toEqual(expected)
     })
 
