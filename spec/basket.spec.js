@@ -107,4 +107,7 @@ describe("Basket", () => {
         let bagelInBasket = basket.addItem("bagel", -1)
         expect(bagelInBasket).toEqual(expected)
     })
+
+    //Test 11
+    it('item not in menu',())
 })
