@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 /* eslint-disable no-undef */
 const Basket = require('../src/basket.js')
 describe('Basket', () => {
@@ -110,7 +111,10 @@ describe('Basket', () => {
   })
 
   // Test 11
-  // it('item not in menu',() =>{
+  it('item not in menu', () => {
+    const result = basket.addItem('pizza', 1)
+    const expected = 'not in menu'
 
-  // })
+    expect(result).toEqual(expected)
+  })
 })
